@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Boas-vindas | La Stratégique</title>
+<meta name="description" content="Entrada do cliente La Stratégique: conte sobre você, seu cliente e sua marca para começarmos o trabalho.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Inter:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Tokens iguais aos do site novo (lastrategique.com.br) */
+:root{
+  color-scheme:light;
+  --noir:#0B0B0B; --ink:#191919; --paper:#FFFFFF; --bone:#F4F2EE;
+  --blue:#004AAD; --blue-lift:#5B95F2;
+  --smoke:#63605B; --line:#DAD6D0; --line-strong:#C9C5BF;
+  --err:#A4262C; --err-bg:#FBEFEF;
+  --f-disp:'Jost','Futura','Century Gothic',sans-serif;
+  --f-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --f-hand:'Gochi Hand','Bradley Hand',cursive;
+  --gut:clamp(16px,5vw,48px);
+  --t-fast:140ms; --e-fast:cubic-bezier(.2,0,.2,1);
+  --t-mid:300ms;  --e-mid:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button,input,textarea{font:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--blue-lift)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:8px;top:-60px;z-index:100;background:#fff;color:var(--ink);padding:12px 16px;font-family:var(--f-disp);font-size:13px;letter-spacing:.1em}
+.skip:focus{top:8px}
+h1,h2{font-family:var(--f-disp);font-weight:300;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(30px,7vw,48px);line-height:1.1}
+h2{font-size:clamp(26px,5.6vw,36px);line-height:1.15}
+h1 em,h2 em{font-style:normal;font-weight:600}
+p{margin:0}
+.eyebrow{margin:0 0 16px;font-family:var(--f-disp);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--smoke);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:'';width:26px;height:1px;background:currentColor;flex:none}
+
+/* Topo */
+.top{position:sticky;top:0;z-index:30;background:var(--noir);color:#fff;padding:calc(12px + env(safe-area-inset-top,0px)) var(--gut) 0}
+.top__row{max-width:640px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:32px}
+.mono{font-family:var(--f-disp);font-weight:300;font-size:12px;letter-spacing:.34em;color:#fff;text-decoration:none;white-space:nowrap}
+.top__step{font-family:var(--f-disp);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72);text-align:right}
+.bar{height:3px;background:rgba(255,255,255,.14);margin:12px calc(-1 * var(--gut)) 0}
+.bar__fill{height:100%;width:0;background:#fff;transition:width var(--t-mid) var(--e-mid)}
+
+/* Tela de abertura (escura, como a abertura do site) */
+.hero{background:var(--noir);color:#fff;min-height:calc(100svh - 47px);padding:40px var(--gut) calc(40px + env(safe-area-inset-bottom,0px));display:flex;align-items:center}
+.hero__in{max-width:640px;margin:0 auto;width:100%}
+.hero .eyebrow{color:#8A8A8A}
+.lead{font-weight:300;font-size:clamp(17px,4.4vw,20px);line-height:1.6;margin-top:18px;color:rgba(255,255,255,.8)}
+.facts{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.16)}
+.facts li{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:15px;color:rgba(255,255,255,.86);display:flex;gap:12px}
+.facts li::before{content:'';width:14px;height:1px;background:var(--blue-lift);margin-top:12px;flex:none}
+.marg{font-family:var(--f-hand);color:var(--blue-lift);font-size:22px;line-height:1.25;position:relative;padding-left:54px;margin-top:28px;transform:rotate(-2deg);transform-origin:left center;max-width:30ch}
+.marg svg{position:absolute;left:0;top:0;width:44px;height:36px;overflow:visible}
+.hero .actions{margin-top:30px;display:flex;flex-direction:column;gap:10px}
+.resume{margin-top:28px;border:1px solid rgba(255,255,255,.22);padding:16px}
+.resume p{font-size:15px;color:rgba(255,255,255,.86)}
+.resume .actions{margin-top:12px}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border:1px solid transparent;border-radius:2px;cursor:pointer;text-decoration:none;font-family:var(--f-disp);font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;transition:background var(--t-fast) var(--e-fast),color var(--t-fast) var(--e-fast),border-color var(--t-fast) var(--e-fast)}
+.btn--solid{background:var(--ink);color:#fff}
+.btn--solid:hover{background:var(--blue)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn--ghost:hover{border-color:var(--ink)}
+.dark .btn--solid{background:#fff;color:var(--ink)}
+.dark .btn--solid:hover,.dark .btn--solid:focus-visible{background:var(--blue);color:#fff}
+.dark .btn--ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.dark .btn--ghost:hover{border-color:#fff}
+.btn[disabled]{opacity:.6;cursor:progress}
+.linkbtn{background:none;border:0;padding:8px 0;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px}
+
+/* Etapas */
+.wrap{max-width:640px;margin:0 auto;padding:32px var(--gut) calc(130px + env(safe-area-inset-bottom,0px))}
+.step h2:focus{outline:none}
+.step__intro{margin:12px 0 30px;color:#3A3A3A;font-size:16px;max-width:60ch}
+.alert{background:var(--err-bg);border-left:3px solid var(--err);padding:12px 14px;margin:0 0 24px;font-size:15px;color:#5a1519}
+.q{border:0;margin:0 0 30px;padding:0;min-width:0;scroll-margin-top:90px}
+.q__label{display:block;padding:0;margin:0 0 6px;font-family:var(--f-disp);font-weight:500;font-size:18px;line-height:1.3;color:var(--ink)}
+.tag{font-family:var(--f-body);font-weight:400;font-size:12px;letter-spacing:.02em;color:var(--smoke);margin-left:6px;white-space:nowrap}
+.q__help{font-size:14px;color:var(--smoke);margin:0 0 12px;line-height:1.5}
+.q__label + .field,.q__label + .chips,.q__label + .scale{margin-top:10px}
+.field{display:block;width:100%;min-height:52px;padding:13px 14px;font-size:16px;line-height:1.4;color:var(--ink);background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;-webkit-appearance:none;appearance:none}
+.field::placeholder{color:#8f8b85}
+.field:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--ink)}
+textarea.field{min-height:116px;resize:vertical}
+input[type=date].field{min-height:52px}
+.field[aria-invalid="true"]{border-color:var(--err);background:var(--err-bg)}
+.err{color:var(--err);font-size:14px;margin-top:8px}
+.other{margin-top:10px}
+.count{font-size:13px;color:var(--smoke);margin-top:6px}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips--stack{flex-direction:column}
+.chip{position:relative;display:flex}
+.chip input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.chip span{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 16px;background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;font-size:15px;line-height:1.3;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:background var(--t-fast) var(--e-fast),color var(--t-fast) var(--e-fast),border-color var(--t-fast) var(--e-fast)}
+.chips--stack .chip span{width:100%}
+.chip span:hover{border-color:var(--ink)}
+.chip input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip input:checked + span::before{content:'';flex:none;width:11px;height:6px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(-45deg)}
+.chip input:focus-visible + span{outline:2px solid var(--blue);outline-offset:2px}
+.q[aria-invalid="true"] .chip span{border-color:var(--err)}
+
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.scale .chip span{justify-content:center;width:100%;padding:10px 0;font-family:var(--f-disp);font-weight:500;font-size:17px}
+.scale .chip input:checked + span::before{display:none}
+.scale__ends{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--smoke);margin-top:8px}
+.scale__ends span:last-child{text-align:right}
+
+.consent label{display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;font-size:15px}
+.consent input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--ink)}
+.consent[aria-invalid="true"] label{border-color:var(--err)}
+
+.info{background:var(--paper);border-left:2px solid var(--blue);padding:18px 18px 20px;margin:0 0 30px;font-size:15px;line-height:1.6}
+.info h3{font-family:var(--f-disp);font-weight:500;font-size:18px;margin:0 0 8px}
+.info p + p,.info ul{margin-top:10px}
+.info ul{padding-left:18px}
+.info li{margin:4px 0}
+.info strong{font-weight:600}
+.flow{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:16px 0 6px}
+.flow__card{background:var(--bone);border:1px solid var(--line);padding:10px;font-size:13px;line-height:1.35;text-align:center}
+.flow__card b{display:block;font-family:var(--f-disp);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);margin-bottom:4px}
+.flow__to{display:flex;flex-direction:column;gap:6px}
+.flow svg{width:36px;height:24px;color:var(--blue)}
+
+.saved{font-size:12px;color:var(--smoke);margin-top:-8px}
+
+/* Navegação fixa no pé */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:25;background:rgba(244,242,238,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom,0px))}
+.nav__in{max-width:640px;margin:0 auto;display:flex;gap:10px}
+.nav .btn--solid{flex:1}
+.nav .btn--ghost{flex:none;padding:0 16px}
+.nav__save{max-width:640px;margin:6px auto 0;text-align:center;font-size:12px;color:var(--smoke);min-height:18px}
+
+/* Tela final */
+.done h2{margin-bottom:12px}
+.timeline{list-style:none;margin:28px 0 0;padding:0;border-left:1px solid var(--line-strong)}
+.timeline li{position:relative;padding:0 0 22px 22px}
+.timeline li::before{content:'';position:absolute;left:-5px;top:7px;width:9px;height:9px;background:var(--ink);border-radius:50%}
+.timeline b{display:block;font-family:var(--f-disp);font-weight:500;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:2px}
+.box{background:var(--paper);border:1px solid var(--line);padding:18px;margin-top:28px}
+.box h3{font-family:var(--f-disp);font-weight:500;font-size:18px;margin:0 0 8px}
+.box textarea{min-height:260px;font-size:14px;margin-top:12px}
+.box .btn{width:100%;margin-top:10px}
+.sign{font-family:var(--f-hand);color:var(--blue);font-size:24px;margin-top:26px;transform:rotate(-2deg)}
+
+@media (min-width:700px){
+  .hero .actions{flex-direction:row}
+  .flow{gap:14px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="top" aria-label="La Stratégique">
+  <div class="top__row">
+    <a class="mono" href="../" aria-label="La Stratégique, página inicial">LA STRATÉGIQUE</a>
+    <span class="top__step" id="topStep" aria-live="polite"></span>
+  </div>
+  <div class="bar" role="progressbar" aria-label="Progresso do formulário" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar"><div class="bar__fill" id="barFill"></div></div>
+</header>
+
+<main id="conteudo" tabindex="-1">
+  <!-- 1. Abertura -->
+  <section class="hero dark" id="intro" aria-labelledby="introTitle">
+    <div class="hero__in">
+      <p class="eyebrow">Entrada do cliente</p>
+      <h1 id="introTitle">Que bom ter você <em>com a gente.</em></h1>
+      <p class="lead">Antes de criar qualquer post, a gente quer entender você, o seu cliente e o jeito da sua marca. Aqui, a pesquisa vem antes da arte.</p>
+      <ul class="facts">
+        <li>Até 7 etapas curtas, de 10 a 12 minutos</li>
+        <li>Quase tudo é só tocar nas opções</li>
+        <li>Salva sozinho neste aparelho: dá para parar e voltar depois</li>
+        <li>Nenhuma senha é pedida aqui</li>
+      </ul>
+      <p class="marg" aria-hidden="true"><svg viewBox="0 0 44 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 6c10 2 22 8 30 22"/><path d="M26 25l8 3 1-9"/></svg>responde com calma, sem resposta certa ou errada</p>
+      <div class="resume" id="resume" hidden>
+        <p>Você já começou antes neste aparelho. Quer continuar de onde parou?</p>
+        <div class="actions">
+          <button type="button" class="btn btn--solid" id="btnResume">Continuar de onde parei</button>
+          <button type="button" class="btn btn--ghost" id="btnReset">Começar do zero</button>
+        </div>
+      </div>
+      <div class="actions" id="startActions">
+        <button type="button" class="btn btn--solid" id="btnStart">Começar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Formulário -->
+  <form id="form" novalidate hidden aria-describedby="topStep">
+    <div class="wrap" id="steps"></div>
+    <!-- campo-isca contra robôs: pessoas não veem -->
+    <div class="sr-only" aria-hidden="true">
+      <label for="hp">Não preencha este campo</label>
+      <input type="text" id="hp" name="hp" tabindex="-1" autocomplete="off">
+    </div>
+    <nav class="nav" aria-label="Navegação entre etapas">
+      <div class="nav__in">
+        <button type="button" class="btn btn--ghost" id="btnBack">Voltar</button>
+        <button type="submit" class="btn btn--solid" id="btnNext">Continuar</button>
+      </div>
+      <p class="nav__save" id="saveMsg" aria-live="polite"></p>
+    </nav>
+  </form>
+
+  <!-- 3. Final -->
+  <section class="wrap done" id="fim" hidden aria-labelledby="fimTitle">
+    <p class="eyebrow">Tudo pronto</p>
+    <h2 id="fimTitle" tabindex="-1">Recebemos. <em>Agora é com a gente.</em></h2>
+    <p class="step__intro" id="fimMsg">Valeu por dedicar esse tempo. Cada resposta vai direto para o planejamento da sua marca.</p>
+
+    <div class="box" id="copyBox" hidden>
+      <h3 id="copyTitle">Falta um passo: envie suas respostas</h3>
+      <p id="copyText">Toque em "Copiar respostas" e cole na conversa com a La Stratégique no WhatsApp.</p>
+      <label class="sr-only" for="resumo">Resumo das suas respostas</label>
+      <textarea class="field" id="resumo" readonly></textarea>
+      <button type="button" class="btn btn--solid" id="btnCopy">Copiar respostas</button>
+      <button type="button" class="btn btn--ghost" id="btnRetry" hidden>Tentar enviar de novo</button>
+      <p class="saved" id="copyMsg" aria-live="polite" style="margin-top:10px"></p>
+    </div>
+
+    <h3 class="eyebrow" style="margin-top:36px">Próximos passos</h3>
+    <ol class="timeline">
+      <li><b>Em até 24 horas úteis</b>A gente te chama no WhatsApp para confirmar suas respostas e mandar o passo a passo seguro dos acessos. Sem senha, sempre por convite.</li>
+      <li><b>Em até 48 horas úteis</b>Você recebe o convite do seu quadro no Trello, no e-mail que informou, e o link da pasta para enviar logo, fotos e materiais.</li>
+      <li><b>Na primeira semana</b>Conversa de alinhamento e pesquisa do seu mercado. Só depois disso nascem os primeiros conteúdos.</li>
+      <li><b>Antes de publicar</b>Tudo passa por você no Trello. Só vai ao ar o que você aprovar.</li>
+    </ol>
+    <p class="sign" aria-hidden="true">Laís e equipe La Stratégique</p>
+  </section>
+</main>
+
+<script>
+/* ================================================================
+   CONFIGURAÇÃO — veja README.md
+   ENDPOINT vazio  → a tela final mostra o resumo para copiar.
+   Google Forms    → cole a URL terminada em /formResponse e preencha GOOGLE_ENTRIES.
+   n8n (webhook)   → cole a URL do webhook de produção.
+   ================================================================ */
+const ENDPOINT = '';
+const GOOGLE_ENTRIES = {
+  // id da pergunta : 'entry.123456789'   (deixe '' para não enviar aquele campo)
+  nome: '', empresa: '', whatsapp: '', email: '',
+  resumo: '' // opcional: um campo "Parágrafo" que recebe TODAS as respostas em texto
+};
+const STORAGE_KEY = 'ls-entrada-cliente-v2';
+const VERSAO = 'onboarding-v2-2026-09';
+
+/* ================================================================
+   PERGUNTAS (mesma numeração do PERGUNTAS-ONBOARDING-V2.md)
+   ================================================================ */
+const SAUDE = ['Saúde', 'Estética e beleza'];
+const has = (v, x) => Array.isArray(v) ? v.includes(x) : v === x;
+const isSaude = a => SAUDE.includes(a.segmento);
+const isInd = a => a.segmento === 'Indústria';
+const svc = (a, x) => !a.servicos || !a.servicos.length || has(a.servicos, 'Ainda estou definindo') || has(a.servicos, x);
+
+const STEPS = [
+{ id:'voce', title:'Você e o <em>negócio</em>', name:'Você e o negócio',
+  intro:'Primeiro, o básico: quem é você e o que vamos cuidar juntos.',
+  fields:[
+  {id:'nome', type:'text', label:'Seu nome completo', req:true, ac:'name'},
+  {id:'chamar', type:'text', label:'Como você gosta que a gente te chame?', help:'Apelido, nome social, só o primeiro nome. Do seu jeito.', ac:'nickname'},
+  {id:'whatsapp', type:'tel', label:'WhatsApp com DDD', req:true, ph:'(19) 99999-9999', ac:'tel-national'},
+  {id:'email', type:'email', label:'E-mail', req:true, ph:'voce@empresa.com.br', ac:'email', help:'É por ele que chega o convite do seu quadro no Trello.'},
+  {id:'empresa', type:'text', label:'Nome da marca, do jeito que o público conhece', req:true, ac:'organization'},
+  {id:'papel', type:'radio', label:'Qual é o seu papel na empresa?', req:true, opts:['Dono(a) ou sócio(a)','Cuido do marketing','Faço parte da equipe','Outro']},
+  {id:'segmento', type:'radio', label:'Qual é o segmento?', req:true, help:'Algumas perguntas mudam conforme o setor.', opts:['Saúde','Estética e beleza','Indústria','Comércio e varejo','Serviços','Agro','Alimentação','Outro']},
+  {id:'cidade', type:'text', label:'Onde a empresa atende?', ph:'Ex.: Vinhedo e região, ou todo o Brasil'},
+  {id:'tempo', type:'radio', label:'Há quanto tempo a empresa existe?', req:true, opts:['Menos de 1 ano','1 a 3 anos','3 a 10 anos','Mais de 10 anos']},
+  {id:'equipe', type:'radio', label:'Quantas pessoas trabalham com você?', opts:['Só eu','2 a 5','6 a 20','21 a 100','Mais de 100']},
+  {id:'aniversario', type:'date', label:'Aniversário da marca', help:'A data de fundação. Vira post comemorativo todo ano.'},
+  {id:'servicos', type:'check', label:'O que vamos cuidar juntos?', req:true, help:'Marque tudo o que foi contratado. Assim só aparecem as perguntas que fazem sentido.', opts:['Instagram e LinkedIn','Perfil da empresa no Google','Site','Anúncios (tráfego pago)','Fotos e vídeos','Logo e identidade visual','Ainda estou definindo']},
+  {id:'historia', type:'textarea', label:'Em poucas linhas: como o negócio começou?', help:'Sua formação, o que te motivou, o que mais ama fazer. Se preferir, conte por áudio depois.', max:1200},
+  {id:'historia_audio', type:'check', label:'Prefere contar a história por áudio?', hideLabel:true, opts:['Prefiro contar por áudio no WhatsApp']}
+]},
+{ id:'cliente', title:'Seu <em>cliente</em>', name:'Seu cliente',
+  intro:'Quem compra de você, por que compra e o que acontece no caminho até a venda.',
+  fields:[
+  {id:'foco', type:'textarea', label:'O que você mais quer vender ou divulgar nos próximos 3 meses?', req:true, ph:'Ex.: implante dentário; linha de embalagens flexíveis; o novo cardápio de almoço', max:500},
+  {id:'publico_tipo', type:'radio', label:'Para quem você vende?', req:true, opts:['Pessoas (consumidor final)','Empresas','Os dois']},
+  {id:'publico_idade', type:'check', label:'Qual a idade da maioria dos clientes?', opts:['Até 24','25 a 34','35 a 44','45 a 59','60 ou mais','Não sei'], when:a=>a.publico_tipo!=='Empresas'},
+  {id:'publico_empresas', type:'text', label:'Que tipo de empresa compra de você, e quem decide a compra?', ph:'Ex.: indústrias de alimentos; quem decide é o comprador ou o gerente de produção', when:a=>has(a.publico_tipo,'Empresas')||has(a.publico_tipo,'Os dois')},
+  {id:'dores', type:'textarea', label:'Que problema você resolve na vida desse cliente?', req:true, help:'Pense no que ele sente ou perde antes de encontrar você.', max:600},
+  {id:'chegada', type:'check', label:'Como os clientes chegam até você hoje?', req:true, opts:['Indicação','Instagram','Google','WhatsApp','Site','Passam em frente','Convênio ou plano','Representantes ou feiras','Outro']},
+  {id:'hesitacao', type:'check', label:'O que faz um cliente hesitar antes de comprar?', max:3, help:'Escolha até 3.', opts:['Preço','Ainda não conhece a marca','Falta de confiança','Distância','Demora para ser respondido','Concorrente mais barato','Não sei dizer']},
+  {id:'atendimento', type:'radio', label:'Quem responde quando alguém chama no WhatsApp ou telefone?', opts:['Eu','Recepção ou secretária','Equipe de vendas','Não tem alguém fixo']},
+  {id:'sumiram', type:'radio', label:'Clientes que compraram e sumiram: você sabe por quê?', opts:['Sei bem o motivo','Tenho uma ideia','Não sei','Quase não acontece']},
+  {id:'lista', type:'radio', label:'Você tem uma lista dos seus clientes?', opts:['Sim, organizada','Sim, mas espalhada no celular','Não tenho']}
+]},
+{ id:'marca', title:'Sua marca: <em>jeito, cores e voz</em>', name:'Sua marca',
+  intro:'Como a marca quer ser vista, como ela fala e o que não combina com ela.',
+  fields:[
+  {id:'diferencial', type:'textarea', label:'Por que alguém escolhe você e não o concorrente?', req:true, max:600},
+  {id:'percepcao', type:'check', label:'Como você quer que a marca seja vista?', req:true, max:3, help:'Escolha até 3.', opts:['Acolhedora','Confiável','Técnica','Premium','Acessível','Moderna','Tradicional','Próxima','Inovadora','Divertida','Sofisticada','Séria']},
+  {id:'logo', type:'radio', label:'E o logotipo?', req:true, opts:['Tenho e gosto','Tenho, mas quero ajustar','Tenho e quero trocar','Ainda não tenho']},
+  {id:'manual', type:'radio', label:'A marca tem manual ou guia de identidade?', opts:['Tenho manual completo','Tenho só logo e cores','Não tenho','Não sei']},
+  {id:'tom_formal', type:'scale', label:'Jeito de falar: mais formal ou descontraído?', lo:'Bem formal', hi:'Bem descontraído'},
+  {id:'tom_tecnico', type:'scale', label:'Mais técnico ou mais simples?', lo:'Técnico', hi:'Simples, do dia a dia'},
+  {id:'tom_humor', type:'scale', label:'Mais sério ou bem-humorado?', lo:'Sério', hi:'Bem-humorado'},
+  {id:'tratamento', type:'radio', label:'Como a marca trata o cliente nos textos?', opts:['Você','Senhor ou senhora','Tanto faz']},
+  {id:'emojis', type:'radio', label:'Emojis nas legendas?', opts:['Nenhum','Poucos','À vontade']},
+  {id:'estilo', type:'check', label:'Que estilo visual combina com a marca?', max:2, help:'Escolha até 2.', opts:['Minimalista','Elegante','Colorido e alegre','Limpo e claro','Moderno e tecnológico','Aconchegante e natural','Ousado']},
+  {id:'cores_sim', type:'text', label:'Cores que combinam com a marca', ph:'Ex.: azul-marinho e branco'},
+  {id:'cores_nao', type:'text', label:'Cores que você não quer ver', ph:'Ex.: rosa, verde-limão'},
+  {id:'referencias', type:'textarea', label:'Marcas que você admira, de qualquer área', help:'Pode ser @ do Instagram ou site. Serve de referência de estilo.', max:400},
+  {id:'concorrentes', type:'textarea', label:'Concorrentes que você acompanha', help:'@ ou site. A gente estuda para mostrar sua marca de um jeito diferente.', max:400},
+  {id:'nao_quer', type:'check', label:'O que você não quer ver nas suas redes?', opts:['Dancinhas e trends','Memes','Fotos de banco genéricas','Preço ou promoção no post','Política ou religião','Frases motivacionais prontas','Meu rosto em vídeo']},
+  {id:'nao_quer_mais', type:'text', label:'Mais alguma coisa que não combina com a marca?'}
+]},
+{ id:'redes', title:'Redes e <em>resultados</em>', name:'Redes e resultados',
+  intro:'Onde a marca está hoje e o que significa dar certo para você.',
+  fields:[
+  {id:'canais', type:'check', label:'Onde a marca já está?', req:true, opts:['Instagram','Facebook','LinkedIn','TikTok','YouTube','Site','Perfil no Google','Em nenhum ainda']},
+  {id:'link_instagram', type:'text', label:'@ do Instagram', ph:'@suamarca', when:a=>has(a.canais,'Instagram'), ac:'off'},
+  {id:'link_facebook', type:'url', label:'Link do Facebook', ph:'facebook.com/suamarca', when:a=>has(a.canais,'Facebook')},
+  {id:'link_linkedin', type:'url', label:'Link do LinkedIn', ph:'linkedin.com/company/suamarca', when:a=>has(a.canais,'LinkedIn')},
+  {id:'link_tiktok', type:'text', label:'@ do TikTok', ph:'@suamarca', when:a=>has(a.canais,'TikTok'), ac:'off'},
+  {id:'link_youtube', type:'url', label:'Link do YouTube', ph:'youtube.com/@suamarca', when:a=>has(a.canais,'YouTube')},
+  {id:'link_site', type:'url', label:'Endereço do site', ph:'suamarca.com.br', when:a=>has(a.canais,'Site')},
+  {id:'link_google', type:'text', label:'Nome exato no Google (ou link do perfil)', when:a=>has(a.canais,'Perfil no Google')},
+  {id:'nota_presenca', type:'scale', label:'Que nota você dá para a presença on-line da marca hoje?', lo:'1 · Abandonada', hi:'5 · Tenho orgulho', when:a=>a.canais&&a.canais.length&&!has(a.canais,'Em nenhum ainda')},
+  {id:'frequencia', type:'radio', label:'Com que frequência a marca vinha postando?', opts:['Quase todo dia','Algumas vezes por semana','De vez em quando','Está parada'], when:a=>a.canais&&a.canais.length&&!has(a.canais,'Em nenhum ainda')},
+  {id:'anuncios', type:'radio', label:'Já fez anúncios pagos (Instagram, Google)?', req:true, opts:['Nunca','Sim, por conta própria','Sim, com agência ou profissional','Já fiz, mas parei']},
+  {id:'anuncios_aprendizado', type:'textarea', label:'O que funcionou, ou não funcionou, nos anúncios?', max:500, when:a=>a.anuncios&&a.anuncios!=='Nunca'},
+  {id:'verba', type:'radio', label:'Quanto pretende investir por mês em anúncios?', help:'É a verba que vai para o Meta ou o Google, separada do valor da agência.', opts:['Ainda não sei','Até R$ 500','R$ 500 a R$ 1.500','R$ 1.500 a R$ 5.000','Acima de R$ 5.000'], when:a=>has(a.servicos,'Anúncios (tráfego pago)')},
+  {id:'objetivos', type:'check', label:'O que é mais importante agora?', req:true, max:2, help:'Escolha até 2.', opts:['Mais clientes ou agendamentos','Vender um produto específico','Ser referência no que faço','Lançar algo novo','Organizar e profissionalizar a marca','Atrair pessoas para trabalhar comigo']},
+  {id:'sucesso', type:'textarea', label:'Daqui a 6 meses, o que faria você dizer: valeu a pena?', max:500}
+]},
+{ id:'setor', title:'Regras do <em>seu setor</em>', name:'Regras do seu setor', when:a=>isSaude(a)||isInd(a),
+  intro:'Seu setor tem cuidados próprios. Saber disso agora evita retrabalho e protege a sua marca.',
+  fields:[
+  {id:'conselho', type:'check', label:'Qual conselho de classe regula a sua área?', req:true, opts:['CRM','CRO','CRN','CREFITO','CRP','COREN','CRBM','CRF','Não se aplica','Outro'], when:isSaude},
+  {id:'registro', type:'text', label:'Nome e registro que devem aparecer nas peças', help:'Ex.: Dra. Nome Sobrenome · CRM-SP 000000 · RQE 0000. O registro é exigido pelos conselhos em publicidade.', when:a=>isSaude(a)&&!has(a.conselho,'Não se aplica')},
+  {id:'saude_proibido', type:'check', label:'O que não pode aparecer nos seus conteúdos?', help:'Marque o que você já sabe que o seu conselho ou você mesmo não permite.', opts:['Antes e depois','Preço e promoção','Pacientes identificáveis','Depoimentos de pacientes','Promessa de resultado','Imagens de procedimentos','Palavras como "o melhor"'], when:isSaude},
+  {id:'saude_validacao', type:'radio', label:'Quem confere se o conteúdo segue as regras do conselho?', req:true, opts:['Eu','Outra pessoa da equipe','Conto com a agência para me alertar'], when:isSaude},
+  {id:'saude_obs', type:'textarea', label:'Alguma orientação específica que devemos seguir?', max:500, when:isSaude},
+  {id:'ind_tecnico', type:'radio', label:'Seus produtos ou serviços são técnicos?', req:true, opts:['Muito técnicos','Uma parte é técnica','São simples de explicar'], when:isInd},
+  {id:'ind_validador', type:'text', label:'Quem valida as informações técnicas antes de publicar?', req:true, ph:'Nome e função. Ex.: Carlos, engenheiro de produção', when:a=>isInd(a)&&a.ind_tecnico!=='São simples de explicar'},
+  {id:'ind_vende', type:'check', label:'Para quem a indústria vende?', opts:['Outras indústrias','Distribuidores e revendas','Consumidor final','Governo e licitações','Exportação'], when:isInd},
+  {id:'ind_materiais', type:'check', label:'Que materiais técnicos já existem?', opts:['Catálogo','Fichas técnicas','Manuais','Fotos da fábrica','Vídeos de máquinas ou processos','Certificações (ISO e outras)','Nada organizado ainda'], when:isInd},
+  {id:'ind_confidencial', type:'check', label:'O que é confidencial e não pode aparecer?', opts:['Nomes de clientes','Máquinas ou processos','Preços','Interior da fábrica','Rostos de colaboradores','Nada disso'], when:isInd},
+  {id:'ind_feiras', type:'text', label:'Feiras ou eventos do setor que vocês participam', ph:'Ex.: Fispal, Feiplastic', when:isInd}
+]},
+{ id:'rotina', title:'Aprovação, <em>datas e materiais</em>', name:'Aprovação e materiais',
+  intro:'Como vamos trabalhar juntos no dia a dia, sem atraso e sem susto.',
+  fields:[
+  {id:'aprovador', type:'radio', label:'Quem aprova os conteúdos?', req:true, opts:['Eu','Outra pessoa','Eu e mais alguém']},
+  {id:'aprovador_nome', type:'text', label:'Nome e função de quem aprova junto', req:true, ph:'Ex.: Ana, sócia', when:a=>a.aprovador&&a.aprovador!=='Eu'},
+  {id:'aprovador_email', type:'email', label:'E-mail dessa pessoa, para o convite do Trello', when:a=>a.aprovador&&a.aprovador!=='Eu'},
+  {id:'info_trello', type:'info', html:`<h3>Como funciona a aprovação</h3>
+    <p>Cada conteúdo aparece como um cartão no seu quadro do <strong>Trello</strong>. Para aprovar ou pedir ajuste, basta <strong>arrastar o cartão</strong>:</p>
+    <div class="flow" aria-hidden="true">
+      <div class="flow__card"><b>Texto ou arte</b>Chegou para você</div>
+      <svg viewBox="0 0 36 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 14c9-6 19-7 29-2"/><path d="M26 6l6 6-8 3"/></svg>
+      <div class="flow__to"><div class="flow__card">Aprovados</div><div class="flow__card">Alterações</div></div>
+    </div>
+    <ul>
+      <li><strong>Textos:</strong> arraste para "Textos aprovados" ou para "Alterações a fazer".</li>
+      <li><strong>Artes:</strong> arraste para "Designs aprovados" ou para "Alterações de designs".</li>
+    </ul>
+    <p><strong>Prazo de 48 horas:</strong> você tem até 48 horas para olhar e mover o cartão. Sem esse movimento, nada é programado nem publicado. É assim que garantimos que só vai ao ar o que você aprovou. Se o prazo passar, a gente te lembra com carinho, e a data da publicação pode precisar mudar.</p>`},
+  {id:'prazo48', type:'radio', label:'Consegue responder as aprovações em até 48 horas?', req:true, opts:['Sim, tranquilo','Na maioria das vezes','Vou precisar de mais tempo']},
+  {id:'prazo48_obs', type:'text', label:'Conta pra gente o que atrapalha, para combinarmos um jeito', when:a=>a.prazo48==='Vou precisar de mais tempo'},
+  {id:'trello', type:'radio', label:'Você já usa o Trello?', opts:['Já uso','Nunca usei, quero um passo a passo']},
+  {id:'regra_ok', type:'consent', req:true, label:'Entendi: só é publicado o que for arrastado para "aprovados" no Trello.'},
+  {id:'canal', type:'check', label:'Qual é o melhor jeito de falar com você?', req:true, opts:['Mensagem no WhatsApp','Áudio no WhatsApp','Ligação','E-mail']},
+  {id:'horario', type:'check', label:'E o melhor horário?', opts:['Manhã','Hora do almoço','Tarde','Noite']},
+  {id:'datas', type:'check', label:'Quais datas são importantes para o seu negócio?', opts:['Dia das Mães','Dia dos Pais','Dia do Cliente','Outubro Rosa','Novembro Azul','Black Friday','Natal e fim de ano','Dia da minha profissão','Feiras do setor']},
+  {id:'datas_outras', type:'textarea', label:'Outras datas para a gente anotar', help:'Inauguração, lançamentos, eventos, férias coletivas, datas em que você estará fora.', max:500},
+  {id:'fotos', type:'radio', label:'Você tem fotos e vídeos da empresa?', req:true, opts:['Muitos e organizados','Alguns, no celular','Quase nada']},
+  {id:'quem_grava', type:'check', label:'Quem pode gravar ou fotografar no dia a dia?', opts:['Eu','Alguém da equipe','Contrato um profissional','Quero a captação da La Stratégique']},
+  {id:'aparecer', type:'radio', label:'Você ou a equipe topam aparecer em vídeos?', opts:['Adoro aparecer','Topo, com roteiro e ajuda','Prefiro não aparecer']},
+  {id:'info_materiais', type:'info', html:`<p><strong>Não precisa anexar nada aqui.</strong> Depois do envio, mandamos o link de uma pasta para você colocar logo, fotos, vídeos e materiais.</p>`}
+]},
+{ id:'acessos', title:'Acessos e <em>combinados finais</em>', name:'Acessos e combinados',
+  intro:'Últimos detalhes. Falta pouco.',
+  fields:[
+  {id:'info_acessos', type:'info', html:`<h3>Acessos com segurança</h3>
+    <p><strong>Não escreva senhas neste formulário.</strong> Os acessos são feitos por convite, sem compartilhar senha: você adiciona a La Stratégique como <strong>parceira no Meta Business</strong> (Facebook e Instagram) e envia um <strong>convite de administrador no Perfil da empresa no Google</strong>. Mandamos um passo a passo com prints pelo WhatsApp.</p>
+    <p>Aqui você só conta o que já tem. Se não souber, tudo bem: descobrimos juntos.</p>`},
+  {id:'acesso_meta', type:'radio', label:'Conta no Meta Business (Gerenciador de Negócios do Facebook e Instagram)', opts:['Tenho','Não tenho','Não sei'], when:a=>svc(a,'Instagram e LinkedIn')||svc(a,'Anúncios (tráfego pago)')},
+  {id:'acesso_insta_pro', type:'radio', label:'Instagram como conta profissional', opts:['Sim','Não','Não sei'], when:a=>svc(a,'Instagram e LinkedIn')||svc(a,'Anúncios (tráfego pago)')},
+  {id:'acesso_linkedin', type:'radio', label:'Página da empresa no LinkedIn', opts:['Tenho','Não tenho','Não sei'], when:a=>svc(a,'Instagram e LinkedIn')},
+  {id:'acesso_google_perfil', type:'radio', label:'Perfil da empresa no Google (Google Meu Negócio)', opts:['Tenho e acesso','Tenho, mas perdi o acesso','Não tenho','Não sei'], when:a=>svc(a,'Perfil da empresa no Google')},
+  {id:'acesso_google_ads', type:'radio', label:'Conta no Google Ads', opts:['Tenho','Não tenho','Não sei'], when:a=>svc(a,'Anúncios (tráfego pago)')},
+  {id:'acesso_dominio', type:'radio', label:'Domínio do site (ex.: registro.br) e hospedagem', opts:['Estão no meu nome','Estão com outra pessoa ou empresa','Não tenho','Não sei'], when:a=>svc(a,'Site')},
+  {id:'acesso_admin', type:'radio', label:'Quem administra essas contas hoje?', opts:['Eu','Alguém da equipe','Agência ou profissional anterior','Não sei']},
+  {id:'algo_mais', type:'textarea', label:'Tem algo importante que a gente não perguntou?', max:1000},
+  {id:'portfolio', type:'radio', label:'Podemos mostrar o trabalho da sua marca no portfólio da agência?', opts:['Pode, sim','Só depois de me consultar','Prefiro que não']},
+  {id:'lgpd', type:'consent', req:true, label:'Autorizo a La Stratégique a usar estas informações apenas para planejar e executar o trabalho da minha marca.'}
+]}
+];
+
+/* ================================================================
+   Utilidades
+   ================================================================ */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const strip = s => String(s).replace(/<[^>]+>/g, '');
+const ALL = STEPS.flatMap(s => s.fields.map(f => Object.assign(f, {step:s})));
+const byId = Object.fromEntries(ALL.map(f => [f.id, f]));
+let ans = {};
+let cur = STEPS[0].id;
+
+function store(fn){ try { return fn(); } catch(e){ return null; } }
+function saveDraft(){
+  const ok = store(() => { localStorage.setItem(STORAGE_KEY, JSON.stringify({v:2, step:cur, ans, t:Date.now()})); return true; });
+  const msg = $('#saveMsg');
+  if (ok) { const d = new Date(); msg.textContent = 'Rascunho salvo neste aparelho às ' + d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}); }
+  else msg.textContent = 'Não foi possível salvar o rascunho neste navegador. Tente terminar de uma vez.';
+}
+function loadDraft(){ return store(() => JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null')); }
+function clearDraft(){ store(() => localStorage.removeItem(STORAGE_KEY)); }
+
+function maskTel(v){
+  const d = v.replace(/\D/g,'').slice(0,11);
+  if (!d) return '';
+  if (d.length <= 2) return '(' + d;
+  if (d.length <= 6) return `(${d.slice(0,2)}) ${d.slice(2)}`;
+  if (d.length <= 10) return `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}`;
+  return `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
+}
+
+/* ================================================================
+   Renderização
+   ================================================================ */
+function tag(f){ return f.req ? '' : '<span class="tag">(opcional)</span>'; }
+function describedBy(f){ return [f.help ? 'h-'+f.id : '', 'e-'+f.id].filter(Boolean).join(' '); }
+function renderField(f){
+  const help = f.help ? `<p class="q__help" id="h-${f.id}">${esc(f.help)}</p>` : '';
+  const err = `<p class="err" id="e-${f.id}" hidden></p>`;
+  if (f.type === 'info') return `<div class="info" data-f="${f.id}">${f.html}</div>`;
+  if (f.type === 'consent') return `<div class="q consent" data-f="${f.id}"><label><input type="checkbox" name="${f.id}" id="i-${f.id}" aria-describedby="e-${f.id}"><span>${esc(f.label)}</span></label>${err}</div>`;
+  if (['text','tel','email','url','date'].includes(f.type)){
+    const im = {tel:'tel', email:'email', url:'url'}[f.type];
+    const type = f.type === 'url' ? 'text' : f.type; // "text" + inputmode url aceita endereço sem https://
+    return `<div class="q" data-f="${f.id}"><label class="q__label" for="i-${f.id}">${esc(f.label)}${tag(f)}</label>${help}
+      <input class="field" id="i-${f.id}" name="${f.id}" type="${type}"${im?` inputmode="${im}"`:''}${f.ac?` autocomplete="${f.ac}"`:''}${f.ph?` placeholder="${esc(f.ph)}"`:''}${f.type==='url'||f.type==='email'?' autocapitalize="off" spellcheck="false"':''} enterkeyhint="next" aria-describedby="${describedBy(f)}"${f.req?' aria-required="true"':''}>${err}</div>`;
+  }
+  if (f.type === 'textarea'){
+    return `<div class="q" data-f="${f.id}"><label class="q__label" for="i-${f.id}">${esc(f.label)}${tag(f)}</label>${help}
+      <textarea class="field" id="i-${f.id}" name="${f.id}"${f.max?` maxlength="${f.max}"`:''}${f.ph?` placeholder="${esc(f.ph)}"`:''} aria-describedby="${describedBy(f)}"${f.req?' aria-required="true"':''}></textarea>${err}</div>`;
+  }
+  // radio, check, scale
+  const isScale = f.type === 'scale';
+  const inputType = f.type === 'check' ? 'checkbox' : 'radio';
+  const opts = isScale ? ['1','2','3','4','5'] : f.opts;
+  const stack = !isScale && opts.some(o => o.length > 26);
+  const chips = opts.map((o,i) => `<label class="chip"><input type="${inputType}" name="${f.id}" value="${esc(o)}" id="i-${f.id}-${i}"><span>${isScale?`<span class="sr-only">Nota </span>`:''}${esc(o)}</span></label>`).join('');
+  const other = opts.includes('Outro') ? `<div class="other" data-other="${f.id}" hidden><label class="sr-only" for="i-${f.id}__outro">Qual?</label><input class="field" id="i-${f.id}__outro" name="${f.id}__outro" type="text" placeholder="Qual?" enterkeyhint="next"></div>` : '';
+  const ends = isScale ? `<div class="scale__ends" aria-hidden="true"><span>1 = ${esc(f.lo.replace(/^1 · /,''))}</span><span>5 = ${esc(f.hi.replace(/^5 · /,''))}</span></div>` : '';
+  const legend = f.hideLabel ? `<legend class="sr-only">${esc(f.label)}</legend>` : `<legend class="q__label">${esc(f.label)}${tag(f)}</legend>`;
+  const scaleHelp = isScale ? `<p class="sr-only" id="s-${f.id}">Escala de 1 a 5. 1 significa ${esc(f.lo)}. 5 significa ${esc(f.hi)}.</p>` : '';
+  return `<fieldset class="q" data-f="${f.id}" aria-describedby="${describedBy(f)}${isScale?' s-'+f.id:''}"${f.hideLabel?' style="margin-top:-18px"':''}>${legend}${help}${scaleHelp}
+    <div class="${isScale?'scale':'chips'+(stack?' chips--stack':'')}">${chips}</div>${ends}${other}${err}</fieldset>`;
+}
+function renderSteps(){
+  $('#steps').innerHTML = STEPS.map(s => `
+    <section class="step" data-step="${s.id}" hidden aria-labelledby="t-${s.id}">
+      <p class="eyebrow" data-count></p>
+      <h2 id="t-${s.id}" tabindex="-1">${s.title}</h2>
+      <p class="step__intro">${esc(s.intro)}</p>
+      <div class="alert" role="alert" hidden></div>
+      ${s.fields.map(renderField).join('')}
+    </section>`).join('');
+}
+
+/* ================================================================
+   Estado, condições e progresso
+   ================================================================ */
+const visible = f => !f.when || !!f.when(ans);
+const visSteps = () => STEPS.filter(s => !s.when || s.when(ans));
+
+function applyConditions(){
+  ALL.forEach(f => {
+    const w = document.querySelector(`[data-f="${f.id}"]`);
+    if (w) w.hidden = !visible(f);
+    const o = document.querySelector(`[data-other="${f.id}"]`);
+    if (o) o.hidden = !has(ans[f.id], 'Outro');
+  });
+}
+function updateProgress(){
+  const vs = visSteps();
+  const i = Math.max(0, vs.findIndex(s => s.id === cur));
+  const pct = Math.round(((i + 1) / vs.length) * 100);
+  $('#barFill').style.width = pct + '%';
+  $('#bar').setAttribute('aria-valuenow', pct);
+  const s = vs[i];
+  $('#topStep').textContent = `Etapa ${i+1} de ${vs.length}`;
+  const eb = document.querySelector(`[data-step="${cur}"] [data-count]`);
+  if (eb) eb.textContent = `Etapa ${i+1} de ${vs.length} · ${s.name}`;
+  $('#btnNext').textContent = i === vs.length - 1 ? 'Enviar respostas' : 'Continuar';
+}
+
+function readInput(t){
+  const name = t.name; if (!name || name === 'hp') return;
+  const f = byId[name];
+  if (t.type === 'checkbox' && f && f.type === 'consent') ans[name] = t.checked;
+  else if (t.type === 'checkbox') {
+    const vals = [...document.querySelectorAll(`input[name="${name}"]:checked`)].map(x => x.value);
+    if (f && f.max && vals.length > f.max){
+      t.checked = false;
+      showErr(f, `Escolha no máximo ${f.max}. Desmarque uma para trocar.`);
+      return;
+    }
+    ans[name] = vals;
+  }
+  else if (t.type === 'radio') ans[name] = t.value;
+  else {
+    if (f && f.type === 'tel') { t.value = maskTel(t.value); if (document.activeElement === t) t.setSelectionRange(t.value.length, t.value.length); }
+    ans[name] = t.value;
+  }
+  if (f) clearErr(f);
+  applyConditions(); updateProgress(); saveDraft();
+}
+function fillFromAns(){
+  Object.entries(ans).forEach(([k, v]) => {
+    const f = byId[k];
+    if (Array.isArray(v)) document.querySelectorAll(`input[name="${k}"]`).forEach(x => x.checked = v.includes(x.value));
+    else if (typeof v === 'boolean') { const x = document.getElementById('i-'+k); if (x) x.checked = v; }
+    else if (f && ['radio','scale'].includes(f.type)) document.querySelectorAll(`input[name="${k}"]`).forEach(x => x.checked = x.value === v);
+    else { const x = document.querySelector(`[name="${k}"]`); if (x) x.value = v; }
+  });
+}
+
+/* ================================================================
+   Validação gentil
+   ================================================================ */
+function showErr(f, msg){
+  const e = document.getElementById('e-'+f.id); if (!e) return;
+  e.textContent = msg; e.hidden = false;
+  const w = document.querySelector(`[data-f="${f.id}"]`);
+  const inp = document.getElementById('i-'+f.id);
+  if (w && w.tagName === 'FIELDSET' || f.type === 'consent') w.setAttribute('aria-invalid','true');
+  else if (inp) inp.setAttribute('aria-invalid','true');
+}
+function clearErr(f){
+  const e = document.getElementById('e-'+f.id); if (e){ e.hidden = true; e.textContent = ''; }
+  const w = document.querySelector(`[data-f="${f.id}"]`); if (w) w.removeAttribute('aria-invalid');
+  const inp = document.getElementById('i-'+f.id); if (inp) inp.removeAttribute('aria-invalid');
+}
+function checkField(f){
+  const v = ans[f.id];
+  const empty = v === undefined || v === '' || v === false || (Array.isArray(v) && !v.length) || (typeof v === 'string' && !v.trim());
+  if (f.req && empty){
+    if (f.type === 'consent') return 'Para seguir, confirme marcando esta caixa.';
+    if (['radio','check','scale'].includes(f.type)) return 'Escolha uma opção para seguir.';
+    return 'Falta só esta resposta.';
+  }
+  if (empty) return '';
+  if (f.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim())) return 'Confere o e-mail? Parece faltar alguma parte. Ex.: nome@empresa.com.br';
+  if (f.type === 'tel' && v.replace(/\D/g,'').length < 10) return 'Confere o número com DDD? Ex.: (19) 99999-9999';
+  if (f.type === 'url' && !/\.[a-z]{2,}/i.test(v)) return 'Confere o endereço? Ex.: suamarca.com.br';
+  return '';
+}
+function validateStep(id){
+  const s = STEPS.find(x => x.id === id);
+  const bad = [];
+  s.fields.filter(visible).forEach(f => {
+    const m = checkField(f);
+    if (m){ showErr(f, m); bad.push(f); } else clearErr(f);
+  });
+  const al = document.querySelector(`[data-step="${id}"] .alert`);
+  if (bad.length){
+    al.textContent = bad.length === 1 ? 'Falta uma resposta nesta etapa. Ela está marcada logo abaixo.' : `Faltam ${bad.length} respostas nesta etapa. Estão marcadas logo abaixo.`;
+    al.hidden = false;
+    const f = bad[0];
+    const target = document.getElementById('i-'+f.id) || document.getElementById('i-'+f.id+'-0');
+    const w = document.querySelector(`[data-f="${f.id}"]`);
+    if (w) w.scrollIntoView({block:'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    if (target) setTimeout(() => target.focus({preventScroll:true}), 250);
+    return false;
+  }
+  al.hidden = true;
+  return true;
+}
+
+/* ================================================================
+   Navegação
+   ================================================================ */
+function show(view){
+  $('#intro').hidden = view !== 'intro';
+  $('#form').hidden = view !== 'form';
+  $('#fim').hidden = view !== 'fim';
+  $('.top .bar').hidden = view === 'intro';
+  if (view === 'intro') $('#topStep').textContent = '';
+}
+function goStep(id, focus = true){
+  const vs = visSteps();
+  if (!vs.find(s => s.id === id)) id = vs[0].id;
+  cur = id;
+  document.querySelectorAll('.step').forEach(s => s.hidden = s.dataset.step !== id);
+  show('form'); updateProgress(); saveDraft();
+  window.scrollTo(0, 0);
+  if (focus) { const h = document.getElementById('t-'+id); if (h) h.focus({preventScroll:true}); }
+}
+function next(){
+  if (!validateStep(cur)) return;
+  const vs = visSteps(); const i = vs.findIndex(s => s.id === cur);
+  if (i < vs.length - 1) goStep(vs[i+1].id); else submit();
+}
+function back(){
+  const vs = visSteps(); const i = vs.findIndex(s => s.id === cur);
+  if (i > 0) goStep(vs[i-1].id); else { $('#resume').hidden = true; $('#startActions').hidden = false; $('#btnStart').textContent = 'Continuar'; show('intro'); window.scrollTo(0,0); $('#btnStart').focus(); }
+}
+
+/* ================================================================
+   Resumo e envio
+   ================================================================ */
+function valueText(f){
+  let v = ans[f.id];
+  if (v === undefined || v === '' || (Array.isArray(v) && !v.length)) return '';
+  if (typeof v === 'boolean') return v ? 'Sim' : '';
+  const outro = (ans[f.id+'__outro'] || '').trim();
+  const arr = (Array.isArray(v) ? v : [v]).map(x => x === 'Outro' && outro ? 'Outro: ' + outro : x);
+  if (f.type === 'scale') return `${v} de 5 (1 = ${f.lo.replace(/^1 · /,'')}, 5 = ${f.hi.replace(/^5 · /,'')})`;
+  if (f.type === 'date') { const [y,m,d] = v.split('-'); return d ? `${d}/${m}/${y}` : v; }
+  return arr.join(', ').trim();
+}
+function buildAnswers(){
+  const out = {}; const lines = [];
+  lines.push('ENTRADA DO CLIENTE · LA STRATÉGIQUE');
+  lines.push('Enviado em ' + new Date().toLocaleString('pt-BR'));
+  visSteps().forEach(s => {
+    const fs = s.fields.filter(f => f.type !== 'info' && visible(f));
+    const rows = fs.map(f => [f, valueText(f)]).filter(([,t]) => t);
+    fs.forEach(f => { out[f.id] = valueText(f); });
+    if (!rows.length) return;
+    lines.push('', '— ' + strip(s.title).toUpperCase() + ' —');
+    rows.forEach(([f, t]) => lines.push(`• ${f.label}`, `  ${t}`));
+  });
+  return {respostas: out, resumo: lines.join('\n')};
+}
+function withTimeout(ms){ const c = new AbortController(); setTimeout(() => c.abort(), ms); return c.signal; }
+async function send(data){
+  if (!ENDPOINT) return 'sem-endpoint';
+  if (/docs\.google\.com\/forms/.test(ENDPOINT)){
+    const p = new URLSearchParams();
+    Object.entries(GOOGLE_ENTRIES).forEach(([k, entry]) => {
+      if (!entry) return;
+      p.append(entry, k === 'resumo' ? data.resumo : (data.respostas[k] || ''));
+    });
+    await fetch(ENDPOINT, {method:'POST', mode:'no-cors', body:p, signal:withTimeout(15000)});
+    return 'ok'; // resposta "opaca": o Google não devolve confirmação
+  }
+  const r = await fetch(ENDPOINT, {
+    method:'POST', headers:{'Content-Type':'application/json'}, signal:withTimeout(15000),
+    body: JSON.stringify({versao:VERSAO, enviado_em:new Date().toISOString(), origem:location.href, respostas:data.respostas, resumo:data.resumo})
+  });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return 'ok';
+}
+let lastData = null;
+async function submit(){
+  const btn = $('#btnNext');
+  lastData = buildAnswers();
+  if ($('#hp').value) { finish('ok'); return; } // robô
+  btn.disabled = true; btn.setAttribute('aria-busy','true'); btn.textContent = 'Enviando…';
+  let status;
+  try { status = await send(lastData); } catch(e){ status = 'erro'; }
+  btn.disabled = false; btn.removeAttribute('aria-busy'); updateProgress();
+  finish(status);
+}
+function finish(status){
+  const box = $('#copyBox');
+  $('#resumo').value = lastData ? lastData.resumo : '';
+  $('#btnRetry').hidden = status !== 'erro';
+  if (status === 'ok'){
+    box.hidden = true; clearDraft();
+    $('#fimMsg').textContent = 'Suas respostas chegaram para a equipe. Cada uma vai direto para o planejamento da sua marca.';
+  } else if (status === 'sem-endpoint'){
+    box.hidden = false;
+    $('#copyTitle').textContent = 'Falta um passo: envie suas respostas';
+    $('#copyText').textContent = 'Toque em "Copiar respostas" e cole na conversa com a La Stratégique no WhatsApp.';
+    $('#fimMsg').textContent = 'Valeu por dedicar esse tempo. Suas respostas continuam salvas neste aparelho até você enviar.';
+  } else {
+    box.hidden = false;
+    $('#copyTitle').textContent = 'A conexão falhou, mas nada se perdeu';
+    $('#copyText').textContent = 'Tente enviar de novo. Se não der, copie as respostas e cole no WhatsApp da La Stratégique.';
+    $('#fimMsg').textContent = 'Suas respostas estão salvas neste aparelho.';
+  }
+  show('fim'); $('#barFill').style.width = '100%'; $('#bar').setAttribute('aria-valuenow', 100);
+  $('#topStep').textContent = 'Concluído';
+  window.scrollTo(0,0); $('#fimTitle').focus({preventScroll:true});
+}
+async function copyResumo(){
+  const t = $('#resumo'); let ok = false;
+  try { await navigator.clipboard.writeText(t.value); ok = true; } catch(e){}
+  if (!ok){ try { t.focus(); t.select(); ok = document.execCommand('copy'); } catch(e){} }
+  $('#copyMsg').textContent = ok ? 'Copiado. Agora é só colar no WhatsApp.' : 'Não deu para copiar sozinho. Toque e segure no texto para copiar.';
+}
+
+/* ================================================================
+   Início
+   ================================================================ */
+renderSteps();
+const draft = loadDraft();
+if (draft && draft.ans && Object.keys(draft.ans).length){
+  $('#resume').hidden = false; $('#startActions').hidden = true;
+}
+show('intro');
+
+$('#btnStart').addEventListener('click', () => { applyConditions(); goStep(visSteps()[0].id); });
+$('#btnResume').addEventListener('click', () => { ans = draft.ans || {}; fillFromAns(); applyConditions(); goStep(draft.step || STEPS[0].id); });
+$('#btnReset').addEventListener('click', () => { clearDraft(); ans = {}; $('#resume').hidden = true; $('#startActions').hidden = false; $('#btnStart').focus(); });
+const isChoice = t => t.type === 'checkbox' || t.type === 'radio';
+$('#form').addEventListener('input', e => { if (!isChoice(e.target)) readInput(e.target); });
+$('#form').addEventListener('change', e => { if (isChoice(e.target)) readInput(e.target); });
+$('#form').addEventListener('submit', e => { e.preventDefault(); next(); });
+// Enter (ou "próximo" no teclado do celular) em campo de texto leva ao próximo campo, sem enviar a etapa
+$('#form').addEventListener('keydown', e => {
+  const t = e.target;
+  if (e.key !== 'Enter' || t.tagName !== 'INPUT' || isChoice(t)) return;
+  e.preventDefault();
+  const step = t.closest('.step'); if (!step) return;
+  const items = [...step.querySelectorAll('input.field, textarea.field, .chip input')].filter(x => !x.closest('[hidden]'));
+  const nxt = items[items.indexOf(t) + 1];
+  if (nxt) nxt.focus(); else $('#btnNext').focus();
+});
+$('#btnBack').addEventListener('click', back);
+$('#btnCopy').addEventListener('click', copyResumo);
+$('#btnRetry').addEventListener('click', async () => { show('form'); await submit(); });
+</script>
+</body>
+</html>
